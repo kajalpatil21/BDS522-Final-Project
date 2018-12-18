@@ -3,7 +3,7 @@ title: "Conclusion"
 ---
 
 
-## Conclusion
+
 The ANOVA shows us that there is no significant difference for gender when we look at average cheating across all three conditions (Control, High cheat and Low cheat). However, when we ran the Wilcoxon ranked sum test by each condition separately, we find an interesting result in the high cheat condition. We see that there is a significant difference in gender with males cheating significantly more than females. There was no significant difference in the other two conditions. Thus we find partial evidence supporting hypothesis 1. 
 To test hypothesis 2, we ran a test to check if there is a difference in the magnitude of cheating between both genders. Thus, we fail to reject the null hypothesis.
 

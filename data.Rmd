@@ -26,7 +26,6 @@ FinalData<-rbind(Control,LowCheat,HighCheat)
 
 ```
 
-##Data and Methods
 
 ### Data
 

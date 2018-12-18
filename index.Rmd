@@ -2,7 +2,6 @@
 title: "Introduction"
 ---
 
-## Introduction
 ### Motivation
 
 The motivation for my project stems from my interest in leadership influence and how unethical behaviour by leaders can motivate unethical follower behaviour. In this project, I am specifically interested in observing the effect the gender of followers has on their actions.
