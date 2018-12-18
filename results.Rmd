@@ -4,9 +4,9 @@ title: "Results"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
+	echo = TRUE,
 	message = FALSE,
-	warning = FALSE,
-	include = FALSE
+	warning = FALSE
 )
 library(readr)
 library(dplyr)
@@ -33,7 +33,6 @@ FinalData<-rbind(Control,LowCheat,HighCheat)
 
 
 
-##Results
 
 ```{r echo=FALSE}
 attach(MyData)

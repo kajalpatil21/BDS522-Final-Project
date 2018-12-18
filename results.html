@@ -209,15 +209,62 @@ $(document).ready(function () {
 </div>
 
 
-<div id="results" class="section level2">
-<h2>Results</h2>
+<pre><code>##                       Df Sum Sq Mean Sq F value Pr(&gt;F)
+## factor(Genderbinary)   1   1.52   1.518   1.112  0.293
+## Residuals            144 196.54   1.365</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  avgcheat by Genderbinary
+## t = 1.0557, df = 143.56, p-value = 0.2929
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1778885  0.5857606
+## sample estimates:
+## mean in group 0 mean in group 1 
+##       0.6583012       0.4543651</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  HighCheat$avgcheat by HighCheat$Genderbinary
+## W = 417, p-value = 0.005177
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  LowCheat$avgcheat by LowCheat$Genderbinary
+## W = 296, p-value = 0.6401
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  Control$avgcheat by Control$Genderbinary
+## W = 293, p-value = 0.6586
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <p>When we ran an ANOVA to test for gender differences per condition, we find no significant gender differences ((p-value= 0.293). The t-test also shows us similar results (p-value= 0.2929). However, running a Wilcoxon rank sum test with each condition showed significant gender differences in the high cheat condition (p-value=0.005177) compared to the control condition (p-value=0.6586) and low cheat condition (p-value=0.6401). This is visually apparent in the graph, where we see that male cheating behavior in the high cheat condition is much higher than for females, but it’s not the case for the control and low cheat where females cheat more than male.</p>
+<p><img src="results_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  CheatTotal by Genderbinary
+## t = 1.1379, df = 142.98, p-value = 0.2571
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1655751  0.6147743
+## sample estimates:
+## mean in group 0 mean in group 1 
+##       0.6644144       0.4398148</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  CheatTotal by Genderbinary
+## W = 3006, p-value = 0.09963
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <p>Testing the second hypothesis: The two sample t.test between amount of cheating and gender shows us that the p-value is 0.2571. When we run a Wilcoxon ranked sum test, we see that the result is still insignificant with a p-value of 0.09963. Thus there is no significant difference in the amount of cheating based on gender.</p>
 <div id="potential-limitations" class="section level3">
 <h3>Potential Limitations</h3>
 <p>In this study we only look at the gender of the followers and the impact that has on cheating behaviour. However, we do not look at the gender of leaders which may also have an effect on the cheating behaviour of followers. It would be useful to study the effect the gender of leaders could have on the gender of followers in relation to cheating behaviour.</p>
 <p>Other limitations of our experiment include: 1. Deceptive leader behavior was either misinterpreted by some participants, or not salient enough. There were participants who thought “the leader was just following instructions” or “the leader was probably adding his own dice score”. 2. The incentive to cheat was not strong enough, or was not stated clearly enough. We offered participants free candy as an immediate incentive after they completed the experiment, but that may not have been enough of an incentive. 3. The ability to cheat in the game was not salient enough for all the participants. We tried to allude to the possibility of cheating through our comprehension test questions, specifically by asking what were “acceptable” cases of reported dice rolls. However, that still may not have been very clear.</p>
-</div>
 </div>
 
 
