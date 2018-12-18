@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Data and Methods</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BDS 522 Final Project</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introduction</a>
+</li>
+<li>
+  <a href="data.html">Data and Methods</a>
+</li>
+<li>
+  <a href="results.html">Results</a>
+</li>
+<li>
+  <a href="conclusion.html">Conclusion</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data and Methods</h1>
+
+</div>
+
+
+<div id="data-and-methods" class="section level2">
+<h2>Data and Methods</h2>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>The data for this project will be from my BDS 501 group project - “When Leaders Cheat”. It was collected manually by my team by running an experiment on the Penn campus with undergraduate and postgraduate students. The data most essential to my project is the numerical results for the individual reported results, the category of treatment they were assigned and most importantly, their gender(which is collected in the post-survey). In the end, we had a total of 205 participants, which can be further broken down into 51 teams comprising of 51 leaders and 150 followers. For the purpose of my analysis, I have excluded 4 participants who reported “Prefer not to say” in the answer for gender, bringing my total observations to 146.</p>
+<p>The relevant data which has been broadly organized by types and their respective categories can be seen in the table below:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Participant ID</td>
+<td>Categorical</td>
+</tr>
+<tr class="even">
+<td>Pre-survey Results</td>
+<td>Ordinal/Categorical</td>
+</tr>
+<tr class="odd">
+<td>Treatment Group</td>
+<td>Categorical</td>
+</tr>
+<tr class="even">
+<td>Dice Results</td>
+<td>Ratio</td>
+</tr>
+<tr class="odd">
+<td>Individual reported results</td>
+<td>Ratio</td>
+</tr>
+<tr class="even">
+<td>Team reported results</td>
+<td>Ratio</td>
+</tr>
+<tr class="odd">
+<td>Post-survey results</td>
+<td>Ordinal/Categorical</td>
+</tr>
+<tr class="even">
+<td>Demographics</td>
+<td>Categorical</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="experiment-design" class="section level3">
+<h3>Experiment Design</h3>
+<p>For our experiment, we utilize a repeated dice game, similar to the one used by d’Adda et al. (2017). The basic repeated game works in the following manner: in each round, followers privately roll a dice and then publicly report their dice roll (either accurately or not depending on the direction of their leader’s encouragement); the rounds proceed in the same way until the game is over. In our study, however, we modify this set up and procedure such that the dice game is played in teams of four individuals, i.e. three followers and one randomly assigned leader. The followers must report their (private) dice rolls to the leader, who then calculates the total team score i.e. the sum of the three follower’s reported dice roll. This set up is novel as leaders publicly calculate the team’s total performance, i.e. on a whiteboard, in order to make the leader’s actions directly observable by the entire team. Depending on the treatment, the leader either accurately calculates the correct team score, or he or she records an inflated team score by adding an additional small or large value to the team total. For simplicity and future reference, Condition 1 is the control condition, Condition 2 is the low cheat condition, and Condition 3 is the high cheat condition.</p>
+</div>
+<div id="descriptive-statistics" class="section level3">
+<h3>Descriptive Statistics</h3>
+<p>This table highlights the distribution of men and women across the three conditions - high cheat, low cheat and control:</p>
+<pre><code>## 
+## --------Summary descriptives table by &#39;Condition&#39;---------
+## 
+## __________________________________________________ 
+##              Control   High Cheat   Low Cheat   N  
+##               N=50        N=49        N=47         
+## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+## gender:                                        146 
+##     Female 27 (54.0%)  24 (49.0%)  23 (48.9%)      
+##     Male   23 (46.0%)  25 (51.0%)  24 (51.1%)      
+## age        21.9 (4.16) 21.5 (2.99) 21.7 (2.86) 145 
+## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯</code></pre>
+<p>Summary statistics of the average cheating per condition: <img src="data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre><code>## ### Descriptive Statistics   
+## **Variable:** MyData$avgcheat by Condition   
+## 
+## |      &amp;nbsp; | Control | High Cheat | Low Cheat |
+## |------------:|--------:|-----------:|----------:|
+## |    **Mean** |    0.43 |       0.81 |      0.43 |
+## | **Std.Dev** |    1.04 |       1.39 |      1.01 |
+## |     **Min** |    0.00 |       0.00 |     -0.14 |
+## |  **Median** |    0.00 |       0.00 |      0.00 |
+## |     **Max** |    4.57 |       5.43 |      5.14 |
+## |     **IQR** |    0.00 |       1.29 |      0.29 |</code></pre>
+</div>
+<div id="methods" class="section level3">
+<h3>Methods</h3>
+<p>For the purposes of testing my first hypothesis, I conduct an ANOVA to see if there is any significant difference in average cheating by gender across all three conditions. Then, in order to check cheating behaviour by gender per condition, I will be using a two sample t-test. In a two-sample t-test, you compare the means of two groups of data and test whether or not they are the same. In this case, the two samples are the two genders - male and female. However, the t-test assumes normality of distribution, therefore I will also conduct a Wilcoxon ranked sum test for each condition, since it is a non-parametric test. To test my second hypothesis, I will conduct a t-test to look at the magnitude of cheating by followers based on gender. Due to the normality assumpition of a t-test, I will also conduct a Wilcoxon ranked sum test in this case as well.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

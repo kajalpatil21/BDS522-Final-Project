@@ -1,0 +1,72 @@
+---
+title: "Results"
+---
+
+```{r include=FALSE}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(latexpdf)
+library(compareGroups)
+library(summarytools)
+library(Rmisc)
+NewData <- read_csv("NewData1 - 1.csv")
+MyData <- subset(NewData, gender!= "Prefer not to say",)
+MyData$Genderbinary <- ifelse(MyData$gender == "Male", 1, 0)
+MyData$reportavg<-(MyData$report2+MyData$report3+MyData$report4+MyData$report5+MyData$report6+MyData$report7)/6
+MyData$rollavg<-(MyData$`Roll-2A`+MyData$`Roll-2B`+MyData$`Roll-3A`+MyData$`Roll-3B`+MyData$`Roll-4A`+MyData$`Roll-4B`+MyData$`Roll-5A`+MyData$`Roll-5B`+MyData$`Roll-6A`+MyData$`Roll-6B`+MyData$`Roll-7A`+MyData$`Roll-7B`)/6
+MyData$CheatTotal<-MyData$reportavg-MyData$rollavg
+Control<-subset.data.frame(MyData,MyData$teamID==1|MyData$teamID==4|MyData$teamID==6|MyData$teamID==10|MyData$teamID==13|MyData$teamID==14|MyData$teamID==19|MyData$teamID==22|MyData$teamID==25|MyData$teamID==28|MyData$teamID==31|MyData$teamID==34|MyData$teamID==37|MyData$teamID==40|MyData$teamID==43|MyData$teamID==48|MyData$teamID==49)
+LowCheat<-subset.data.frame(MyData,MyData$teamID==2|MyData$teamID==5|MyData$teamID==8|MyData$teamID==11|MyData$teamID==15|MyData$teamID==16|MyData$teamID==20|MyData$teamID==23|MyData$teamID==26|MyData$teamID==29|MyData$teamID==32|MyData$teamID==35|MyData$teamID==35|MyData$teamID==38|MyData$teamID==41|MyData$teamID==44|MyData$teamID==47|MyData$teamID==50)
+HighCheat<-subset.data.frame(MyData,MyData$teamID==3|MyData$teamID==7|MyData$teamID==9|MyData$teamID==12|MyData$teamID==17|MyData$teamID==18|MyData$teamID==21|MyData$teamID==24|MyData$teamID==27|MyData$teamID==30|MyData$teamID==33|MyData$teamID==36|MyData$teamID==39|MyData$teamID==42|MyData$teamID==45|MyData$teamID==46|MyData$teamID==51)
+Control$Condition<-"Control"
+LowCheat$Condition<-"Low Cheat"
+HighCheat$Condition<-"High Cheat"
+FinalData<-rbind(Control,LowCheat,HighCheat)
+
+```
+
+
+
+##Results
+
+```{r echo=FALSE}
+attach(MyData)
+summary(aov(avgcheat~factor(Genderbinary), data=MyData))
+t.test(avgcheat ~ Genderbinary)
+wilcox.test(HighCheat$avgcheat~HighCheat$Genderbinary)
+wilcox.test(LowCheat$avgcheat~LowCheat$Genderbinary)
+wilcox.test(Control$avgcheat~Control$Genderbinary)
+```
+
+When we ran an ANOVA to test for gender differences per condition, we find no significant gender differences ((p-value= 0.293). The t-test also shows us similar results (p-value= 0.2929).
+However, running a Wilcoxon rank sum test with each condition showed significant gender differences in the high cheat condition (p-value=0.005177) compared to the control condition (p-value=0.6586) and low cheat condition (p-value=0.6401).
+This is visually apparent in the graph, where we see that male cheating behavior in the high cheat condition is much higher than for females, but it's not the case for the control and low cheat where females cheat more than male. 
+
+```{r echo=FALSE}
+pd <- position_dodge(0.1)
+averages <- summarySE(FinalData, measurevar="avgcheat", groupvars=c("gender", "Condition" ))
+ggplot(averages, aes(x=Condition, y=avgcheat, colour=gender, group=gender))+
+  geom_line(position=pd)+ labs(title="Cheating Levels by Gender")+
+  geom_point(position=pd, size=3, shape=21, fill="white")+  ylab("Average Cheating")+
+  scale_colour_hue(name="Gender", labels=c("Male", "Female"), l=40)+
+  theme_bw()+  geom_errorbar(aes(ymin=avgcheat-se, ymax=avgcheat+se), colour="black", width=.1, position=pd)+ 
+  theme(legend.justification = c(1,0), legend.position = c(1,0))
+```
+
+```{r echo=FALSE}
+t.test(CheatTotal ~ Genderbinary)
+wilcox.test(CheatTotal ~ Genderbinary)
+``` 
+
+Testing the second hypothesis: The two sample t.test between amount of cheating and gender shows us that the p-value is 0.2571. When we run a Wilcoxon ranked sum test, we see that the result is still insignificant with a p-value of 0.09963. Thus there is no significant difference in the amount of cheating based on gender.
+
+
+
+### Potential Limitations
+In this study we only look at the gender of the followers and the impact that has on cheating behaviour. However, we do not look at the gender of leaders which may also have an effect on the cheating behaviour of followers. It would be useful to study the effect the gender of leaders could have on the gender of followers in relation to cheating behaviour.
+
+Other limitations of our experiment include:
+1. Deceptive leader behavior was either misinterpreted by some participants, or not salient enough. There were participants who thought "the leader was just following instructions" or "the leader was probably adding his own dice score". 
+2. The incentive to cheat was not strong enough, or was not stated clearly enough. We offered participants free candy as an immediate incentive after they completed the experiment, but that may not have been enough of an incentive.
+3. The ability to cheat in the game was not salient enough for all the participants. We tried to allude to the possibility of cheating through our comprehension test questions, specifically by asking what were "acceptable" cases of reported dice rolls. However, that still may not have been very clear.

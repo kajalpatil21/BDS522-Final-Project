@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Results</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BDS 522 Final Project</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introduction</a>
+</li>
+<li>
+  <a href="data.html">Data and Methods</a>
+</li>
+<li>
+  <a href="results.html">Results</a>
+</li>
+<li>
+  <a href="conclusion.html">Conclusion</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Results</h1>
+
+</div>
+
+
+<div id="results" class="section level2">
+<h2>Results</h2>
+<pre><code>## The following objects are masked from MyData (pos = 3):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 4):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 5):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 6):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 8):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 9):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 10):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from MyData (pos = 11):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 12):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 13):
+## 
+##     ability, age, avgcheat, competent, condition, diff1, diff2,
+##     diff3, diff4, diff5, diff6, diff7, Duration (in seconds),
+##     effort, Finished, gender, Genderbinary, goodjob, leadercheat,
+##     participantID, performance, power, pre1, pre2, race, report1,
+##     report2, report3, report4, report5, report6, report7, Roll-1A,
+##     Roll-1B, Roll-2A, Roll-2B, Roll-3A, Roll-3B, Roll-4A, Roll-4B,
+##     Roll-5A, Roll-5B, Roll-6A, Roll-6B, Roll-7A, Roll-7B,
+##     schoolyear, teamID, tRoll1, tRoll2, tRoll3, tRoll4, tRoll5,
+##     tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 14):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 15):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 16):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 17):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 18):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 19):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>## The following objects are masked from FinalData (pos = 20):
+## 
+##     ability, age, avgcheat, CheatTotal, competent, condition,
+##     diff1, diff2, diff3, diff4, diff5, diff6, diff7, Duration (in
+##     seconds), effort, Finished, gender, Genderbinary, goodjob,
+##     leadercheat, participantID, performance, power, pre1, pre2,
+##     race, report1, report2, report3, report4, report5, report6,
+##     report7, reportavg, Roll-1A, Roll-1B, Roll-2A, Roll-2B,
+##     Roll-3A, Roll-3B, Roll-4A, Roll-4B, Roll-5A, Roll-5B, Roll-6A,
+##     Roll-6B, Roll-7A, Roll-7B, rollavg, schoolyear, teamID,
+##     tRoll1, tRoll2, tRoll3, tRoll4, tRoll5, tRoll6, tRoll7</code></pre>
+<pre><code>##                       Df Sum Sq Mean Sq F value Pr(&gt;F)
+## factor(Genderbinary)   1   1.52   1.518   1.112  0.293
+## Residuals            144 196.54   1.365</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  avgcheat by Genderbinary
+## t = 1.0557, df = 143.56, p-value = 0.2929
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1778885  0.5857606
+## sample estimates:
+## mean in group 0 mean in group 1 
+##       0.6583012       0.4543651</code></pre>
+<pre><code>## Warning in wilcox.test.default(x = c(0, 0, 0, 3, 3.142857143,
+## 4.571428571, : cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  HighCheat$avgcheat by HighCheat$Genderbinary
+## W = 417, p-value = 0.005177
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<pre><code>## Warning in wilcox.test.default(x = c(0, 0, 0, 0.4285714286, 2.142857143, :
+## cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  LowCheat$avgcheat by LowCheat$Genderbinary
+## W = 296, p-value = 0.6401
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<pre><code>## Warning in wilcox.test.default(x = c(0, 0, 0, 0, 0, 0, 0, 3.285714286, 0, :
+## cannot compute exact p-value with ties</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  Control$avgcheat by Control$Genderbinary
+## W = 293, p-value = 0.6586
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>When we ran an ANOVA to test for gender differences per condition, we find no significant gender differences ((p-value= 0.293). The t-test also shows us similar results (p-value= 0.2929). However, running a Wilcoxon rank sum test with each condition showed significant gender differences in the high cheat condition (p-value=0.005177) compared to the control condition (p-value=0.6586) and low cheat condition (p-value=0.6401). This is visually apparent in the graph, where we see that male cheating behavior in the high cheat condition is much higher than for females, but it’s not the case for the control and low cheat where females cheat more than male.</p>
+<p><img src="results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  CheatTotal by Genderbinary
+## t = 1.1379, df = 142.98, p-value = 0.2571
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1655751  0.6147743
+## sample estimates:
+## mean in group 0 mean in group 1 
+##       0.6644144       0.4398148</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  CheatTotal by Genderbinary
+## W = 3006, p-value = 0.09963
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Testing the second hypothesis: The two sample t.test between amount of cheating and gender shows us that the p-value is 0.2571. When we run a Wilcoxon ranked sum test, we see that the result is still insignificant with a p-value of 0.09963. Thus there is no significant difference in the amount of cheating based on gender.</p>
+<div id="potential-limitations" class="section level3">
+<h3>Potential Limitations</h3>
+<p>In this study we only look at the gender of the followers and the impact that has on cheating behaviour. However, we do not look at the gender of leaders which may also have an effect on the cheating behaviour of followers. It would be useful to study the effect the gender of leaders could have on the gender of followers in relation to cheating behaviour.</p>
+<p>Other limitations of our experiment include: 1. Deceptive leader behavior was either misinterpreted by some participants, or not salient enough. There were participants who thought “the leader was just following instructions” or “the leader was probably adding his own dice score”. 2. The incentive to cheat was not strong enough, or was not stated clearly enough. We offered participants free candy as an immediate incentive after they completed the experiment, but that may not have been enough of an incentive. 3. The ability to cheat in the game was not salient enough for all the participants. We tried to allude to the possibility of cheating through our comprehension test questions, specifically by asking what were “acceptable” cases of reported dice rolls. However, that still may not have been very clear.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

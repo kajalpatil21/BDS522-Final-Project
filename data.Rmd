@@ -1,0 +1,77 @@
+---
+title: "Data and Methods"
+---
+
+```{r include=FALSE}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(latexpdf)
+library(compareGroups)
+library(summarytools)
+library(Rmisc)
+NewData <- read_csv("NewData1 - 1.csv")
+MyData <- subset(NewData, gender!= "Prefer not to say",)
+MyData$Genderbinary <- ifelse(MyData$gender == "Male", 1, 0)
+MyData$reportavg<-(MyData$report2+MyData$report3+MyData$report4+MyData$report5+MyData$report6+MyData$report7)/6
+MyData$rollavg<-(MyData$`Roll-2A`+MyData$`Roll-2B`+MyData$`Roll-3A`+MyData$`Roll-3B`+MyData$`Roll-4A`+MyData$`Roll-4B`+MyData$`Roll-5A`+MyData$`Roll-5B`+MyData$`Roll-6A`+MyData$`Roll-6B`+MyData$`Roll-7A`+MyData$`Roll-7B`)/6
+MyData$CheatTotal<-MyData$reportavg-MyData$rollavg
+Control<-subset.data.frame(MyData,MyData$teamID==1|MyData$teamID==4|MyData$teamID==6|MyData$teamID==10|MyData$teamID==13|MyData$teamID==14|MyData$teamID==19|MyData$teamID==22|MyData$teamID==25|MyData$teamID==28|MyData$teamID==31|MyData$teamID==34|MyData$teamID==37|MyData$teamID==40|MyData$teamID==43|MyData$teamID==48|MyData$teamID==49)
+LowCheat<-subset.data.frame(MyData,MyData$teamID==2|MyData$teamID==5|MyData$teamID==8|MyData$teamID==11|MyData$teamID==15|MyData$teamID==16|MyData$teamID==20|MyData$teamID==23|MyData$teamID==26|MyData$teamID==29|MyData$teamID==32|MyData$teamID==35|MyData$teamID==35|MyData$teamID==38|MyData$teamID==41|MyData$teamID==44|MyData$teamID==47|MyData$teamID==50)
+HighCheat<-subset.data.frame(MyData,MyData$teamID==3|MyData$teamID==7|MyData$teamID==9|MyData$teamID==12|MyData$teamID==17|MyData$teamID==18|MyData$teamID==21|MyData$teamID==24|MyData$teamID==27|MyData$teamID==30|MyData$teamID==33|MyData$teamID==36|MyData$teamID==39|MyData$teamID==42|MyData$teamID==45|MyData$teamID==46|MyData$teamID==51)
+Control$Condition<-"Control"
+LowCheat$Condition<-"Low Cheat"
+HighCheat$Condition<-"High Cheat"
+FinalData<-rbind(Control,LowCheat,HighCheat)
+
+```
+
+##Data and Methods
+
+### Data
+
+The data for this project will be from my BDS 501 group project - "When Leaders Cheat". It was collected manually by my team by running an experiment on the Penn campus with undergraduate and postgraduate students. The data most essential to my project is the numerical results for the individual reported results, the category of treatment they were assigned and most importantly, their gender(which is collected in the post-survey).
+In the end, we had a total of 205 participants, which can be further broken down into 51 teams comprising of 51 leaders and 150 followers. For the purpose of my analysis, I have excluded 4 participants who reported "Prefer not to say" in the answer for gender, bringing my total observations to 146.
+
+The relevant data which has been broadly organized by types and their respective categories can be seen in the table below:
+
+Data  | Type
+------------- | -------------
+Participant ID | Categorical
+Pre-survey Results | Ordinal/Categorical
+Treatment Group | Categorical
+Dice Results | Ratio
+Individual reported results | Ratio
+Team reported results | Ratio
+Post-survey results | Ordinal/Categorical
+Demographics | Categorical
+
+###Experiment Design
+
+For our experiment, we utilize a repeated dice game, similar to the one used by d'Adda et al. (2017). The basic repeated game works in the following manner: in each round, followers privately roll a dice and then publicly report their dice roll (either accurately or not depending on the direction of their leader's encouragement); the rounds proceed in the same way until the game is over. In our study, however, we modify this set up and procedure such that the dice game is played in teams of four individuals, i.e. three followers and one randomly assigned leader. The followers must report their (private) dice rolls to the leader, who then calculates the total team score i.e. the sum of the three follower's reported dice roll. This set up is novel as leaders publicly calculate the team's total performance, i.e. on a whiteboard, in order to make the leader's actions directly observable by the entire team. Depending on the treatment, the leader either accurately calculates the correct team score, or he or she records an inflated team score by adding an additional small or large value to the team total. For simplicity and future reference, Condition 1 is the control condition, Condition 2 is the low cheat condition, and Condition 3 is the high cheat condition.
+
+###Descriptive Statistics
+
+This table highlights the distribution of men and women across the three conditions - high cheat, low cheat and control: 
+```{r echo=FALSE}
+Descriptives2 <- compareGroups(Condition ~ gender + age, data=FinalData,)
+
+Descriptives2Table <- createTable(Descriptives2, show.n=TRUE, show.p.overall=FALSE)
+Descriptives2Table
+```
+
+Summary statistics of the average cheating per condition: 
+```{r echo=FALSE}
+boxplot(avgcheat~FinalData$Condition, data=MyData, main="Average Cheating across Condition", xlab="Conditions", ylab="Average Cheating")
+```
+
+```{r echo=FALSE}
+Descriptives1 <- with(MyData, by(avgcheat, FinalData$Condition, descr, 
+                         stats = c("mean", "sd", "min", "med", "max", "IQR")))
+view(Descriptives1, "pander", ctable.totals=TRUE, style="rmarkdown")
+```
+
+###Methods
+
+For the purposes of testing my first hypothesis, I conduct an ANOVA to see if there is any significant difference in average cheating by gender across all three conditions. Then, in order to check cheating behaviour by gender per condition, I will be using a two sample t-test. In a two-sample t-test, you compare the means of two groups of data and test whether or not they are the same. In this case, the two samples are the two genders - male and female. However, the t-test assumes normality of distribution, therefore I will also conduct a Wilcoxon ranked sum test for each condition, since it is a non-parametric test.
+To test my second hypothesis, I will conduct a t-test to look at the magnitude of cheating by followers based on gender. Due to the normality assumpition of a t-test, I will also conduct a Wilcoxon ranked sum test in this case as well. 
